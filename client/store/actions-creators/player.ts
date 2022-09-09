@@ -5,6 +5,7 @@ import {ITrack} from "../../types/track";
 export const playTrack = (): PlayerAction => {
     return {type: PlayerActionTypes.PLAY}
 }
+
 export const pauseTrack = (): PlayerAction => {
     return {type: PlayerActionTypes.PAUSE}
 }

@@ -27,6 +27,7 @@ const TrackPage = ({serverTrack}) => {
     }
 
     return (
+        <>
         <MainLayout
             title={"Музыкальная площадка - " + track.name + " - " + track.artist}
             keywords={'Музыка, артисты, ' + track.name + ", " + track.artist}
@@ -65,15 +66,30 @@ const TrackPage = ({serverTrack}) => {
                 />
                 <Button onClick={addComment}>Отправить</Button>
             </Grid>
-            <div>
+            <div style={{margin: '10px 0'}} >
                 {track.comments.map(comment =>
                     <div>
-                        <div>Автор - {comment.username}</div>
-                        <div>Комментарий - {comment.text}</div>
+                        <div className='.komments'> 
+                            
+                            Автор - {comment.username}</div>
+                        <div className='.komments'>
+                Комментарий - {comment.text}</div>
                     </div>
                 )}
             </div>
+           
         </MainLayout>
+        <style jsx>
+            {`
+                .komments {
+
+                    margin: 10px 0;
+                    display: flex;
+                    padding: 0 10px;
+                    background-color: lightgray; }    
+                `}
+            </style>
+        </>
     );
 };
 
